@@ -8,6 +8,7 @@
 - Functions
 - Error handling
 - User input
+- Dart collections
 
 ## Purpose:
 - Learning reference
