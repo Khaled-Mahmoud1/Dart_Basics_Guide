@@ -9,6 +9,7 @@
 - Error handling
 - User input
 - Dart collections
+- Null safety
 
 ## Purpose:
 - Learning reference
