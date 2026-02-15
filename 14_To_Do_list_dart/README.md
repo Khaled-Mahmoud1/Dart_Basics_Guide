@@ -86,6 +86,6 @@ As an **IT student**, mastering small console apps like this will make projects 
 
 # Author
 
-**Khaled Mahmoud**
+## Khaled Mahmoud
 IT Student – Management Information Systems Technology
 ---
