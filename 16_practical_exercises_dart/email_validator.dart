@@ -24,13 +24,16 @@ bool isValidEmail(String email) {
 }
 
 void main() {
-  print("Enter your email:");
-  String email = stdin.readLineSync()!;
+  while (true) {
+    print("Enter your email:");
+    String email = stdin.readLineSync()!;
 
-  if (isValidEmail(email)) {
-    print("Valid Email");
-  } else {
-    print("Invalid Email");
+    if (isValidEmail(email)) {
+      print("Valid Email");
+      break;
+    } else {
+      print("Invalid Email, try again.\n");
+    }
   }
 }
 
