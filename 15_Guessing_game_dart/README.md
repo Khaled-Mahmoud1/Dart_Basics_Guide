@@ -71,7 +71,7 @@ This project helps practice:
 
 ## Author
 
-**Khaled Abdellttif**
+**Khaled Mahmoud**
 
 Student of Management Technology & Information Systems
 Interested in Programming, Computer Science, and Mobile App Development.
