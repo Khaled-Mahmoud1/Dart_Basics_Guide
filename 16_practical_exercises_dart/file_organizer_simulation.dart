@@ -8,34 +8,35 @@ void main() {
     "logo.png",
   ];
 
+  final Map<String, List<String>> fileTypes = {
+    "Images": ["jpg", "png", "jpeg", "gif"],
+    "Documents": ["pdf", "txt", "doc", "docx"],
+    "Audio": ["mp3", "wav"],
+    "Video": ["mp4", "mkv"],
+  };
+
   Map<String, List<String>> organized = {
-    "Images": [],
-    "Documents": [],
-    "Audio": [],
-    "Video": [],
-    "Other": [],
+    for (var key in [...fileTypes.keys, "Other"]) key: [],
   };
 
   for (var file in files) {
     String extension = file.split('.').last.toLowerCase();
 
-    if (["jpg", "png", "jpeg", "gif"].contains(extension)) {
-      organized["Images"]!.add(file);
-    } else if (["pdf", "txt", "doc", "docx"].contains(extension)) {
-      organized["Documents"]!.add(file);
-    } else if (["mp3", "wav"].contains(extension)) {
-      organized["Audio"]!.add(file);
-    } else if (["mp4", "mkv"].contains(extension)) {
-      organized["Video"]!.add(file);
-    } else {
-      organized["Other"]!.add(file);
-    }
+    String type = getFileType(extension, fileTypes);
+    organized[type]!.add(file);
   }
 
   organized.forEach((type, fileList) {
     print("\n$type:");
-    for (var f in fileList) {
-      print(" - $f");
-    }
+    fileList.forEach((f) => print(" - $f"));
   });
+}
+
+String getFileType(String extension, Map<String, List<String>> fileTypes) {
+  for (var entry in fileTypes.entries) {
+    if (entry.value.contains(extension)) {
+      return entry.key;
+    }
+  }
+  return "Other";
 }
